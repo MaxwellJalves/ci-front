@@ -1,5 +1,5 @@
-export interface IFormulario {
-  descricao: string;
+export interface IAtividade {
+  atividade: string;
   tempo: string;
 }
 

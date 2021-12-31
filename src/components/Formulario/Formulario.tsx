@@ -8,10 +8,10 @@ const Formulario = () => {
   return (
     <>
       <form className="container">
-        <label htmlFor="descricao">Descrição</label>
-        <input type="text" name="descricao" id="descricao" required />
+        <label htmlFor="atividade">Atividade</label>
+        <input type="text" name="atividade" id="atividade" required />
 
-        <label htmlFor="tempo">Duração</label>
+        <label htmlFor="tempo">Tempo estimado </label>
         <input type="date" name="tempo" id="tempo" required />
         <>
           <Button
