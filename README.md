@@ -11,3 +11,6 @@ No Projeto irei utilizar o SASS para poder fazer a estilização dos componentes
 ```
  yarn add sass -D
 ```
+
+31/12/2021
+![image](https://user-images.githubusercontent.com/65586669/147839265-fd25029c-fff0-4408-83f4-c391edf7b5b3.png)
