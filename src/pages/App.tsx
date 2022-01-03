@@ -4,10 +4,23 @@ import Lista from "../components/Lista/Lista";
 import "./style.scss";
 const App = () => {
   return (
-    <div className="AppStyle">
-      <Formulario />
-      <Lista />
-    </div>
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "24px",
+          color: "white",
+          fontSize: "24px",
+        }}
+      >
+        Atividades 2022
+      </div>
+      <div className="AppStyle">
+        <Formulario />
+        <Lista />
+      </div>
+    </>
   );
 };
 
