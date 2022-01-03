@@ -3,6 +3,10 @@ export interface IAtividade {
   tempo: string;
 }
 
+export interface IListaDeAtividades {
+  lista: IAtividade[];
+}
+
 export interface IButton {
   titulo: string;
   tipo: "button" | "submit" | "reset";

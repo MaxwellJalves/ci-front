@@ -1,12 +1,8 @@
+import { IListaDeAtividades } from "../../types/type";
 import Item from "./Item/Item";
 import "./style.scss";
 
-const Lista = () => {
-  const lista = [
-    { atividade: "Estudar React", tempo: "00:30" },
-    { atividade: "Estudar Java", tempo: "00:30" },
-    { atividade: "Tocar Violão", tempo: "00:30" },
-  ];
+const Lista: React.FC<IListaDeAtividades> = ({ lista }) => {
   return (
     <aside>
       <h2>Atividades</h2>
