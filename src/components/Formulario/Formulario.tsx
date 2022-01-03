@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { IAtividade } from "../../types/type";
 import Button from "../Botao/Button";
 import "./style.scss";
-const Formulario = () => {
-  //Objetos do input
-  const [atividade, setAtividade] = useState<string>();
-  const [tempo, setTempo] = useState<string>();
-  //Array que será responsavel por adicionar os objetos na lista
-  const [item, setItem] = useState([{ atividade, tempo }]);
+
+interface IProps {
+  setAtividades: Dispatch<SetStateAction<IAtividade[]>>;
+}
+const Formulario = ({ setAtividades }: IProps) => {
+  const [atividade, setAtividade] = useState("");
+  const [tempo, setTempo] = useState("");
 
   function adicionar(e: React.FormEvent<HTMLElement>) {
     e.preventDefault();
-    //Utilizando o spread para recuperar o estado anterior e adicionar o novo estado
-    setItem([...item, { atividade, tempo }]);
-    console.log(item);
+    setAtividades((anterior) => [...anterior, { atividade, tempo }]);
+    limparInput();
+  }
+
+  function limparInput() {
+    setAtividade("");
+    setTempo("00:00:00");
   }
 
   return (
@@ -39,14 +45,7 @@ const Formulario = () => {
           required
         />
         <>
-          <Button
-            tipo="submit"
-            titulo="Registrar"
-            onClick={(e) => {
-              setItem([...item, { atividade, tempo }]);
-              console.log(item);
-            }}
-          />
+          <Button tipo="submit" titulo="Registrar" />
         </>
       </form>
     </>

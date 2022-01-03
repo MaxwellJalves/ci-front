@@ -1,8 +1,10 @@
-import React from "react";
+import { useState } from "react";
 import Formulario from "../components/Formulario/Formulario";
 import Lista from "../components/Lista/Lista";
+import { IAtividade } from "../types/type";
 import "./style.scss";
 const App = () => {
+  const [atividades, setAtividades] = useState<IAtividade[]>([]);
   return (
     <>
       <div
@@ -17,8 +19,8 @@ const App = () => {
         Atividades 2022
       </div>
       <div className="AppStyle">
-        <Formulario />
-        <Lista />
+        <Formulario setAtividades={setAtividades} />
+        <Lista lista={atividades} />
       </div>
     </>
   );
