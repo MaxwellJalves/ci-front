@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { IAtividade } from "../../types/type";
 import Button from "../Botao/Button";
+import { v4 as uuidv4 } from "uuid";
 import "./style.scss";
 
 interface IProps {
@@ -12,7 +13,11 @@ const Formulario = ({ setAtividades }: IProps) => {
 
   function adicionar(e: React.FormEvent<HTMLElement>) {
     e.preventDefault();
-    setAtividades((anterior) => [...anterior, { atividade, tempo }]);
+    console.log(uuidv4());
+    setAtividades((anterior) => [
+      ...anterior,
+      { atividade, tempo, selecionado: false, finalizado: false, id: uuidv4() },
+    ]);
     limparInput();
   }
 
