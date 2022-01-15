@@ -1,28 +1,23 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Formulario from "../components/Formulario/Formulario";
 import Lista from "../components/Lista/Lista";
 
 import { IAtividade } from "../types/type";
 import "./style.scss";
 import Download from "../components/DownloadDocuments/Download";
-import Item from "../components/Lista/Item/Item";
 
 const App = () => {
   const [atividades, setAtividades] = useState<IAtividade[]>([]);
-  const [selecionado, setSelecionado] = useState<IAtividade>();
+  const [selecao, setSelecionado] = useState<IAtividade>();
 
   function obterAtividadeSelecionada(atividadeSelecionada: IAtividade) {
     setSelecionado(atividadeSelecionada);
-
-    setAtividades((atividadesAnteriores) =>
-      atividadesAnteriores.map((item) => {
-        return {
-          ...item,
-          selecionado: selecionado?.id === item.id ? true : false,
-        };
-      })
+    setAtividades((anteriores) =>
+      anteriores.map((old) => ({
+        ...old,
+        selecionado: old.id === atividadeSelecionada.id,
+      }))
     );
-    console.log("DEBUG APP", atividades);
   }
 
   return (
@@ -41,10 +36,14 @@ const App = () => {
       <div className="AppStyle">
         <Formulario setAtividades={setAtividades} />
         <Lista
-          lista={atividades}
+          atividadesProps={atividades}
           obterAtividadeSelecionada={obterAtividadeSelecionada}
         />
       </div>
+      <button type="button" onClick={() => console.log(selecao)}>
+        teste
+      </button>
+
       <div>
         <Download />
       </div>

@@ -1,16 +1,16 @@
-export interface IAtividade extends PropsItem {
+export interface IAtividade {
   atividade: string;
   tempo: string;
-  selecionado?: boolean;
-  finalizado?: boolean;
+  selecionado: boolean;
+  finalizado: boolean;
   id: string;
 }
 
 export interface IListaDeAtividades extends PropsItem {
-  lista: IAtividade[];
+  atividadesProps: IAtividade[];
 }
 export interface PropsItem {
-  obterAtividadeSelecionada?: (atividadeSelecionada: IAtividade) => void;
+  obterAtividadeSelecionada: (atividadeSelecionada: IAtividade) => void;
 }
 export interface IButton {
   titulo: string;

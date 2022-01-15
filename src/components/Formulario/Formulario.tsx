@@ -13,7 +13,7 @@ const Formulario = ({ setAtividades }: IProps) => {
 
   function adicionar(e: React.FormEvent<HTMLElement>) {
     e.preventDefault();
-    console.log(uuidv4());
+
     setAtividades((anterior) => [
       ...anterior,
       { atividade, tempo, selecionado: false, finalizado: false, id: uuidv4() },
