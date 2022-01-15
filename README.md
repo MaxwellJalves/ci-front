@@ -20,5 +20,7 @@ Adicionando o UUID para gerar um Id único para cada atividade
  yarn add @types/uuid
 ```
 
-31/12/2021
-![image](https://user-images.githubusercontent.com/65586669/147839265-fd25029c-fff0-4408-83f4-c391edf7b5b3.png)
+
+
+15/01/2022
+![avançando](https://user-images.githubusercontent.com/65586669/149610129-af39e8fa-aa66-464f-b5ba-6bf127288409.gif)
